@@ -1,0 +1,21 @@
+class Magam extends Thread{
+    public void run()
+    {
+        System.out.println("Magam");
+    }
+}
+class Srinu extends Magam{
+    @Override 
+    public void run()
+    {
+        System.out.println("Srinu");
+    }
+}
+public class ThreadClassDemo2{
+    public static void main(String[] args)
+    {
+        Srinu m=new Srinu();
+        m.start();
+
+    }
+}
