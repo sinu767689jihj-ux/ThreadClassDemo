@@ -1,0 +1,31 @@
+class Magam extends Thread{
+    public void run()
+    {
+        System.out.println("Magam");
+    }
+}
+class Srinu extends Magam{
+    public void run()
+    {
+        super.run();//call's magam class run
+        System.out.println("Srinu");
+    }
+}
+public class ThreadClassDemo4{
+    public static void main(String[] args)
+    {
+        Srinu m=new Srinu();
+        m.start();
+
+    }
+}
+/*start() → creates a new thread
+
+JVM calls run()
+
+Srinu.run() executes
+
+super.run() explicitly calls Magam.run()
+
+Then "Srinu" is printed*/
+//start() always creates a new thread
