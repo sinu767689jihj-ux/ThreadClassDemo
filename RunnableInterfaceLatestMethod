@@ -1,0 +1,17 @@
+public class RunnableInterfaceLatestMethod {
+    public static void main(String[] args)
+    {
+        Runnable r=()->{
+
+            System.out.println("Runnable Interface");
+            for(int i=0;i<10;i++)
+            {
+                System.out.println("Thread Executing:"+i);
+            }
+        };
+        Thread t=new Thread(r);
+        t.start();
+        Thread t1=new Thread(r);
+        t1.start();
+    }
+}
