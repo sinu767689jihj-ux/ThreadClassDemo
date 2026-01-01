@@ -1,0 +1,47 @@
+public class JoinMethod extends Thread{
+    public void run()
+    {
+        System.out.println("Join Method");
+        for(int i=0;i<10;i++)
+        {
+            System.out.println("Thread Name:"+currentThread().getName());
+            System.out.println("Value is:"+i);
+        }
+    }
+    public static void main(String[] args)
+    {
+        JoinMethod join1=new JoinMethod();
+        join1.start();
+        join1.setName("Srinu");
+        try{
+        join1.join();
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
+        JoinMethod join2=new JoinMethod();
+        join2.start();
+        join2.setName("Raja");
+        JoinMethod join3=new JoinMethod();
+        join3.start();
+        join3.setName("MahendraReddy");
+    }
+}
+//join():join() method is used to wait for a thread to complete execution before starting another thread.
+//join() is executed sequentially.
+//join() don't allow the any thread.
+//void java.lang.Thread.join() throws InterruptedException join.
+/*public final void join()
+                throws InterruptedException
+Waits for this thread to die.
+
+An invocation of this method behaves in exactly the same way as the invocation
+
+join(0)
+
+Throws:
+
+InterruptedException - if any thread has interrupted the current thread. The interrupted status of the current */
+
+
