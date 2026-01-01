@@ -1,0 +1,25 @@
+import java.time.LocalDateTime;
+public class SleepMethod extends Thread{
+    public void run()
+    {
+        System.out.println("Sleep Method:");
+        for(int i=0;i<10;i++)
+        {
+            System.out.println("Value:"+i);
+            try{
+                Thread.sleep(1000);
+                LocalDateTime td=LocalDateTime.now();
+                System.out.println("Time is:"+td);
+                System.out.println("Day of Month is:"+td.getDayOfMonth() +"Month is:"+td.getMonth() +"year is:"+td.getYear());
+            }catch(InterruptedException e)
+            {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        SleepMethod s=new SleepMethod();
+        s.start();
+    }
+}
