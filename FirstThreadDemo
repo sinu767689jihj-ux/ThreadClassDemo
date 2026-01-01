@@ -1,0 +1,17 @@
+public class FirstThreadDemo extends Thread{
+    public void run(){
+            System.out.println("First Thread is Executed");
+            System.out.println("Thread Name:"+Thread.currentThread().getName());//Default show Thread name is 0
+            for(int i=0;i<10;i++)
+            {
+                System.out.println("Iterating the loop:"+i);
+            }
+    }
+    public static void main(String[] args)
+    {
+        FirstThreadDemo t1=new FirstThreadDemo();
+        t1.start();
+        FirstThreadDemo t2=new FirstThreadDemo();
+        t2.start();
+    }
+}
